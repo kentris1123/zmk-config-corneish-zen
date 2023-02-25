@@ -9,6 +9,13 @@
 #include	<dt-bindings/zmk/bt.h>
 #include	<dt-bindings/zmk/outputs.h>
 
+/ {
+   chosen {
+     zmk,matrix_transform = &default_transform;
+     //zmk,matrix_transform = &five_column_transform;
+   };
+ };
+
 #define	DEFAULT	0
 #define	LOWER		1
 #define	RAISE		2
@@ -102,7 +109,7 @@
 
 		default_layer	{
 			bindings	=	<
-				&mt LGUI	GRAVE	&kp	Q		&kp	W			&kp	E			&kp	R			&kp	T			&kp	Y			&kp	U			&kp	I			&kp	O			&kp	P			&mt RALT	LBKT
+				&mt LGUI GRAVE	&kp	Q		&kp	W			&kp	E			&kp	R			&kp	T			&kp	Y			&kp	U			&kp	I			&kp	O			&kp	P			&mt RALT LBKT
 				&mt	LCTRL	RBKT	&kp	A		&kp	S			&kp	D			&kp	F			&kp	G			&kp	H			&kp	J			&kp	K			&kp	L			&kp	SEMI	&mt	RCTRL	APOS
 				&mt	LSHFT	MINUS	&kp	Z		&kp	X			&kp	C			&kp	V			&kp	B			&kp	N			&kp	M			&kp	COMMA	&kp	DOT		&kp	FSLH	&mt	RSHFT	EQUAL
 																					&kp	LALT	&kp	SPACE	&raise		&mo	LOWER	&kp	SPACE	&kp	RGUI
