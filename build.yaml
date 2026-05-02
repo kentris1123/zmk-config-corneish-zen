@@ -1,4 +1,6 @@
 include:
-    # snippet: zmk-usb-logging  # uncomment to enable logging
-  - board: corneish_zen_right
-  - board: corneish_zen_left
+  # snippet: zmk-usb-logging  # uncomment to enable logging
+  - board: nice_nano_v2
+    shield: corneish_zen_right
+  - board: nice_nano_v2
+    shield: corneish_zen_left
