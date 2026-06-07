@@ -193,7 +193,7 @@
 
         raise_layer {
             bindings = <
-&trans  &kp PG_DN  &kp PG_UP  &alt_tab  &kp HOME   &kp END    &kp F11   &kp F12  &none    &none   &none    &none
+&trans  &kp PG_DN  &kp PG_UP  &alt_tab  &kp END    &kp HOME   &kp F11   &kp F12  &none    &none   &none    &none
 &trans  &kp DEL    &kp TAB    &kp UP    &kp BSPC   &kp RET    &kp F6    &kp F7   &kp F8   &kp F9  &kp F10  &trans
 &trans  &kp INS    &kp LEFT   &kp DOWN  &kp RIGHT  &kp ESC    &kp F1    &kp F2   &kp F3   &kp F4  &kp F5   &trans
                               &trans    &trans     &trans     &trans    &trans   &trans
