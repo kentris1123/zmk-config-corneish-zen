@@ -184,7 +184,7 @@
 
         lower_layer {
             bindings = <
-&trans  &none          &none          &none      &kp KP_NLCK   &kp KP_ENTER     &kp KP_DIVIDE      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY  &trans
+&trans  &none          &none          &none         &kp KP_NLCK   &kp KP_ENTER     &kp KP_DIVIDE      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY  &trans
 &trans  &kp MINUS      &kp EQUAL      &kp LBKT      &kp RBKT      &kp GRAVE        &kp BACKSLASH      &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS     &trans
 &trans  &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(LBKT)  &kp LS(RBKT)  &kp LS(GRAVE)    &kp LS(BACKSLASH)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_PLUS      &trans
                                       &trans        &trans        &trans           &trans             &trans     &kp KP_N0
@@ -193,10 +193,10 @@
 
         raise_layer {
             bindings = <
-&trans  &kp PG_DN  &kp PG_UP  &alt_tab  &HOME      &END     &none     &kp F11  &kp F12  &none   &none    &none
-&trans  &kp DEL    &kp TAB    &kp UP    &kp BSPC   &kp RET  &kp F6    &kp F7   &kp F8   &kp F9  &kp F10  &trans
-&trans  &kp INS    &kp LEFT   &kp DOWN  &kp RIGHT  &kp ESC  &kp F1    &kp F2   &kp F3   &kp F4  &kp F5   &trans
-                              &trans    &trans     &trans   &trans    &trans   &trans
+&trans  &kp PG_DN  &kp PG_UP  &alt_tab  &kp HOME   &kp END    &kp F11   &kp F12  &none    &none   &none    &none
+&trans  &kp DEL    &kp TAB    &kp UP    &kp BSPC   &kp RET    &kp F6    &kp F7   &kp F8   &kp F9  &kp F10  &trans
+&trans  &kp INS    &kp LEFT   &kp DOWN  &kp RIGHT  &kp ESC    &kp F1    &kp F2   &kp F3   &kp F4  &kp F5   &trans
+                              &trans    &trans     &trans     &trans    &trans   &trans
             >;
         };
 
