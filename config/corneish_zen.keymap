@@ -21,9 +21,28 @@
 #define	LOWER		1
 #define	RAISE		2
 
-&mt {
-    tapping-term-ms = <140>;
-    flavor = "balanced";
+/ {
+    behaviors {
+        lh_mt: left_hand_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <140>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        rh_mt: right_hand_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <140>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
+        };
+    };
 };
 
 / {
@@ -175,9 +194,9 @@
 
         default_layer {
             bindings = <
-&none  &kp Q        &kp W       &kp E       &kp R        &kp T     &kp Y      &kp U        &kp I           &kp O         &kp P           &none
-&none  &kp A        &kp S       &kp D       &kp F        &kp G     &kp H      &kp J        &kp K           &kp L         &kp SEMI        &none
-&none  &mt LSHFT Z  &mt LGUI X  &mt LALT C  &mt LCTRL V  &kp B     &kp N      &mt RCTRL M  &mt RALT COMMA  &mt RGUI DOT  &mt RSHFT FSLH  &none
+&none  &kp Q           &kp W         &kp E         &kp R          &kp T     &kp Y      &kp U          &kp I             &kp O           &kp P              &none
+&none  &kp A           &kp S         &kp D         &kp F          &kp G     &kp H      &kp J          &kp K             &kp L           &kp SEMI           &none
+&none  &lh_mt LSHFT Z  &lh_mt LGUI X &lh_mt LALT C &lh_mt LCTRL V &kp B     &kp N      &rh_mt RCTRL M &rh_mt RALT COMMA &rh_mt RGUI DOT &rh_mt RSHFT FSLH &none
                                 &kp LALT    &kp SPACE    &raise    &mo LOWER  &kp SPACE    &kp RGUI
             >;
         };
@@ -193,7 +212,7 @@
 
         raise_layer {
             bindings = <
-&trans  &kp PG_DN  &kp PG_UP  &alt_tab  &kp END    &kp HOME   &kp F11   &kp F12  &none    &none   &none    &none
+&trans  &kp PG_DN  &kp PG_UP  &alt_tab  &kp HOME   &kp END    &kp F11   &kp F12  &none    &none   &none    &none
 &trans  &kp DEL    &kp TAB    &kp UP    &kp BSPC   &kp RET    &kp F6    &kp F7   &kp F8   &kp F9  &kp F10  &trans
 &trans  &kp INS    &kp LEFT   &kp DOWN  &kp RIGHT  &kp ESC    &kp F1    &kp F2   &kp F3   &kp F4  &kp F5   &trans
                               &trans    &trans     &trans     &trans    &trans   &trans
