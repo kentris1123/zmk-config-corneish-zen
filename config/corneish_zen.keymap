@@ -18,8 +18,9 @@
 };
 
 #define	DEFAULT	0
-#define	LOWER		1
-#define	RAISE		2
+#define	LOWER   1
+#define	RAISE   2
+#define	TRI     3
 
 / {
     behaviors {
@@ -183,16 +184,6 @@
 };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
-};
-
-/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -201,16 +192,16 @@
 &none  &kp Q           &kp W         &kp E         &kp R          &kp T     &kp Y      &kp U          &kp I             &kp O           &kp P              &none
 &none  &kp A           &kp S         &kp D         &kp F          &kp G     &kp H      &kp J          &kp K             &kp L           &kp SEMI           &none
 &none  &lh_mt LSHFT Z  &lh_mt LGUI X &lh_mt LALT C &lh_mt LCTRL V &kp B     &kp N      &rh_mt RCTRL M &rh_mt RALT COMMA &rh_mt RGUI DOT &rh_mt RSHFT FSLH  &none
-                                &kp LALT    &kp SPACE    &raise    &mo LOWER  &kp SPACE    &kp RGUI
+                                     &kp LALT      &kp SPACE      &raise    &mo LOWER  &lt TRI SPACE  &kp RGUI
             >;
         };
 
         lower_layer {
             bindings = <
-&trans  &kp LS(GRAVE)  &kp GRAVE      &none         &kp KP_NLCK   &kp KP_ENTER     &kp KP_DIVIDE      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY  &trans
-&trans  &kp MINUS      &kp EQUAL      &kp LBKT      &kp RBKT      &kp APOS         &kp BACKSLASH      &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS     &trans
-&trans  &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(LBKT)  &kp LS(RBKT)  &kp LS(APOS)     &kp LS(BACKSLASH)  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_PLUS      &trans
-                                      &trans        &trans        &trans           &trans             &trans     &kp KP_N0
+&trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_DIVIDE    &kp KP_NLCK    &none          &none         &none         &kp GRAVE        &kp LS(GRAVE)      &trans
+&trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MULTIPLY  &kp MINUS      &kp EQUAL      &kp LBKT      &kp RBKT      &kp APOS         &kp BACKSLASH      &trans
+&trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MINUS     &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(LBKT)  &kp LS(RBKT)  &kp LS(APOS)     &kp LS(BACKSLASH)  &trans
+                              &kp KP_N0  &kp KP_PLUS      &kp KP_ENTER   &trans         &trans        &trans
             >;
         };
 
